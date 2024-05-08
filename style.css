@@ -195,8 +195,8 @@ main {
 }
 
   .back-arrow ion-icon {
-    font-size: 4rem;
-    color: white;
+    font-size: 3rem;
+    color: grey;
     text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
   }
   
