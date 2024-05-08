@@ -198,15 +198,26 @@ main {
   }
 }
   .back-arrow {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
-    cursor: pointer;
-  }
-  
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out; /* Add transition for smooth hover effect */
+}
+
   .back-arrow ion-icon {
     font-size: 4rem;
-    color: Grey;
+    color: white;
     text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Hover effect */
+  .back-arrow:hover {
+    transform: scale(1.3); /* Slightly scale up on hover */
+  }
+  
+  /* Clicked effect */
+  .back-arrow:active {
+    transform: scale(0.95); /* Slightly scale down on click */
   }
