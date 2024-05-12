@@ -2,15 +2,19 @@ const slider = document.querySelector('.slider');
 
 function activate(e) {
   const items = document.querySelectorAll('.item');
-  e.target.matches('.next') && slider.append(items[0])
-  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+  
+  // If the clicked element is a "Read More" button
+  if (e.target.tagName === 'BUTTON') {
+    const url = e.target.dataset.url; // Retrieve the URL from the data-url attribute of the button
+    window.location.href = url; // Navigate to the URL
+  }
+
+  // If the clicked element is a navigation button
+  if (e.target.matches('.next')) {
+    slider.append(items[0]);
+  } else if (e.target.matches('.prev')) {
+    slider.prepend(items[items.length - 1]);
+  }
 }
 
-document.addEventListener('click',activate,false);
-
-const backArrow = document.querySelector('.back-arrow');
-
-backArrow.addEventListener('click', () => {
-  //back button website
-  window.location.href = 'https://sam45643.github.io/main-page.github.io/';
-});
+document.addEventListener('click', activate, false);
